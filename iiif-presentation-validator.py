@@ -27,6 +27,9 @@ os.environ['PYTHON_EGG_CACHE'] = egg_cache
 
 from iiif_prezi.loader import ManifestReader
 
+from pyld import jsonld
+jsonld.set_document_loader(jsonld.requests_document_loader(timeout=60))
+
 
 class Validator(object):
     """Validator class that runs with Bottle."""
